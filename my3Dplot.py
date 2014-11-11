@@ -9,8 +9,8 @@ import numpy as np
 class my3DFig(object):
     def __init__(self, anzahl, zeroPos=None):
         """
-        Plottet in einer 3D-Pespektive alles Fußposition und ihren Bodenkontakt
-        :param anzahl: Anzahl der Füße
+        Plottet in einer 3D-Pespektive alles Fussposition und ihren Bodenkontakt
+        :param anzahl: Anzahl der Fuee
         :param zeroPos: Liste von Koordinaten wo der Bodenkontakt sein soll
         """
         # Definiert die anzahl der Beine
@@ -26,13 +26,13 @@ class my3DFig(object):
 
         self.__xyz = [np.zeros(anzahl).tolist() for i in range(3)]
 
-        # Setzt die Farbei für die Fuss-Punkte
+        # Setzt die Farbei fuer die Fuss-Punkte
         self.__color = ['k'] * self.__anzahl
 
         # Setze die Label und die Grenzen der Koordinatensystems
         self.set_xyzlablim()
 
-        # Lässt das Programm weiterlaufen während das Plotfenster noch offen ist
+        # Laesst das Programm weiterlaufen waehrend das Plotfenster noch offen ist
         plt.ion()
 
         # Drehung um die z-Achse und der neuen horizontal zum Sichpunkt schauenden Achse
@@ -41,7 +41,7 @@ class my3DFig(object):
         # Erstellt
         self.__newPoints = self.__ax.scatter(self.__xyz[0], self.__xyz[1], self.__xyz[2], c=self.__color)
 
-        # Läst die Kreise erstellen wenn ihre Positionen verfügbar sind
+        # Laest die Kreise erstellen wenn ihre Positionen verfuegbar sind
         if zeroPos is not None:
             self.initCircle(zeroPos)
             for i in range(len(zeroPos)):
@@ -52,8 +52,8 @@ class my3DFig(object):
     def set_xyzlablim(self, llabel=None, llimit=None):
         """
         Setze die Label und die Grenzen der Koordinatensystems
-        :param llabel: Eine String-Liste für x, y, z Koordinaten
-        :param llimit: Liste von tupeln mit (a)minimas und (b)maximas für x,y,z Koordiantensystem
+        :param llabel: Eine String-Liste fuer x, y, z Koordinaten
+        :param llimit: Liste von tupeln mit (a)minimas und (b)maximas fuer x,y,z Koordiantensystem
                         llimit=[[xa,xb],[ya,yb],[za,zb]]
         """
         if llabel is None:
@@ -88,7 +88,7 @@ class my3DFig(object):
         :param mlist: ?????
         """
         if len(mlist) != self.__anzahl:
-            print("initCircle:Error: Länge stimmt nicht überein!")
+            print("initCircle:Error: Laenge stimmt nicht ueberein!")
         else:
             for i in mlist:
                 circle = Circle((i[0, 0], i[1, 0]), 1, color="b", alpha=0.5)

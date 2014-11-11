@@ -17,16 +17,16 @@ class robot(object):
             list.append(np.array([i,i+1,i+2]))
         return list
 
-    def genDreieck(self,gn = 2,verschiebung = 0):
+    def genDreieck(self,gn = 1):
         l = []
         for i in range(gn):
-            l.append(np.array([1,verschiebung,0])/(gn-i))
+            l.append(np.array([1,0,0])/(gn-i))
         for i in range(gn):
-            l.append(np.array([-1,verschiebung,1])/gn+l[len(l)-1])
+            l.append(np.array([-1,0,1])/gn+l[len(l)-1])
         for i in range(gn):
-            l.append(np.array([-1,verschiebung,-1])/gn+l[len(l)-1])
+            l.append(np.array([-1,0,-1])/gn+l[len(l)-1])
         for i in range(gn):
-            l.append(np.array([1,verschiebung,0])/gn+l[len(l)-1])
+            l.append(np.array([1,0,0])/gn+l[len(l)-1])
 
         return l
 
